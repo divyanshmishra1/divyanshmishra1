@@ -11,11 +11,10 @@
 <div align="center">
 <h1 id="about-me">💫 About Me :</h1>
 <p>🎓 I’m currently pursuing B.Tech in Electronics & Communication Engineering at IIIT Dharwad.</p>
-<p>🏆 NSO Gold Medalist | Maxtop Rank Holder | Ex-Head Boy | Ideal Student of the Year</p>
+<p>🏆 NSO Gold Medalist | Maxtop Rank Holder | Ideal Student of the Year</p>
 <p>📚 Learning tools like LTspice, Vivado, ModelSim, Synopsys, and Cadence to master VLSI design.</p>
 <p>🛠️ Projects: Smart Water System | Speech-to-Text FPGA System | Fire Detection Drone (₹10k budget)</p>
 <p>🚀 My dream is to contribute to India’s growth as a chip manufacturing hub.</p>
-<p>📨 Reach me at: <a href="mailto:web.codewhite@gmail.com">web.codewhite@gmail.com</a></p>
 <p>⚡ Fun fact: I love mixing hardware with AI for real-world innovation.</p>
 
 <h2 id="socials">🌐 Socials</h2>
@@ -27,7 +26,6 @@
 </p>
 
 <h1 id="tech-stack">💻 Tech Stack <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="32px"></h1>
-<!-- You can customize this section based on your tool expertise in VLSI -->
 <p>
   <img src="https://img.shields.io/badge/C-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C">
   <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
@@ -41,27 +39,16 @@
 </p>
 
 <h1 id="github-stats">📊 GitHub Stats :</h1>
-<p><img src="https://github-readme-stats.vercel.app/api?username=CodeWhiteWeb&theme=radical&hide_border=false&include_all_commits=false&count_private=false" alt=""></p>
+<p><img src="https://github-readme-stats.vercel.app/api?username=CodeWhiteWeb&theme=radical&hide_border=false&include_all_commits=true&count_private=true" alt=""></p>
 <p><img src="https://github-readme-streak-stats.herokuapp.com/?user=CodeWhiteWeb&theme=radical&hide_border=false" alt=""></p>
 <p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CodeWhiteWeb&theme=radical&hide_border=false&layout=compact" alt=""></p>
 
 <h2 id="github-trophies">🏆 GitHub Trophies</h2>
 <p><img src="https://github-profile-trophy.vercel.app/?username=CodeWhiteWeb&theme=discord&no-frame=false&no-bg=false&margin-w=4" alt=""></p>
 
-<h3 id="-latest-blog-posts">📕 Latest Blog Posts</h3>
-<!-- BLOG-POST-LIST:START -->
-<p><a href="#">Why India's chip design future needs YOU</a></p>
-<p><a href="#">Getting started with FPGA: From blinking LED to speech detection</a></p>
-<!-- BLOG-POST-LIST:END -->
-<p>➡️ <a href="#">more blog posts…</a></p>
-
-<h3 id="️random-dev-quote">✍️ Random Dev Quote</h3>
-<p><img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=merko" alt=""></p>
-<hr>
-<h2>
-  <img src="https://forthebadge.com/images/badges/powered-by-black-magic.svg" alt="">
-  <img src="http://ForTheBadge.com/images/badges/built-by-developers.svg" alt="">
-  <img src="https://forthebadge.com/images/badges/uses-brains.svg" alt="">
-</h2>
+<!-- View count and final sign-off -->
 <p><img src="https://komarev.com/ghpvc/?username=CodeWhiteWeb&label=Visitors+Count&color=brightgreen" alt=""></p>
+
+<hr>
+<p><b>Keep Building. Keep Learning. The chip revolution begins here ⚡</b></p>
 </div>
