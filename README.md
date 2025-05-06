@@ -10,26 +10,25 @@
 
 ---
 
+<div align="center">
+
 ### 💫 About Me
 
-- 🎓 Electronics & Communication Engineering @ IIIT Dharwad  
-- 🔬 Interests: VLSI, SoC Design, FPGA, Embedded Systems, IoT  
-- 🛠️ Projects:  
-  - 🚰 Smart Water Management System (IoT + Sensors)  
-  - 🔉 Speech-to-Text on FPGA (Keyword + Gender Detection)  
-  - 🚁 Mini Fire Detection Drone
-  - 🤖 Line Follower Robot
-- 💡 Learning Tools: LTspice, Vivado, ModelSim, Synopsys, Cadence, MATLAB  
-- 🇮🇳 Vision: Help build India’s chip manufacturing ecosystem  
+🎓 Electronics & Communication Engineering @ IIIT Dharwad  
+🔬 Interests: VLSI, SoC Design, FPGA, Embedded Systems, IoT  
+🛠️ Projects:
+ 🚰 Smart Water Management System (IoT + Sensors)  
+ 🔉 Speech-to-Text on FPGA (Keyword + Gender Detection)  
+ 🚁 Mini Fire Detection Drone  
+ 🤖 Line Follower Robot  
+💡 Learning Tools: LTspice, Vivado, ModelSim, Synopsys, Cadence, MATLAB  
+🇮🇳 Vision: Help build India’s chip manufacturing ecosystem  
 
 ---
 
 ### 🌐 Connect With Me
 
-[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/c/CodeWhiteWeb)  
-[![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/@CodeWhiteWeb)  
-[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/CodeWhiteWeb)  
-[![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://twitch.tv/code_white_web)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/divyanshmishra1)
 
 ---
 
@@ -50,30 +49,26 @@
 
 ### 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&count_private=true" />
-  <br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=divyanshmishra1&theme=radical" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical" />
-</p>
+<img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&count_private=true" />
+<br/>
+<img src="https://github-readme-streak-stats.herokuapp.com?user=divyanshmishra1&theme=radical" />
+<br/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical" />
 
 ---
 
 ### 🏆 GitHub Trophies
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=discord&margin-w=8" />
-</p>
+<img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=discord&margin-w=8" />
 
 ---
 
 ### 📈 Visitors
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=divyanshmishra1&label=Profile+Views&color=brightgreen" />
-</p>
+<img src="https://komarev.com/ghpvc/?username=divyanshmishra1&label=Profile+Views&color=brightgreen" />
 
 ---
 
 > 🔧 *Keep building. Keep learning. The chip revolution begins with passion and persistence.* 🇮🇳
+
+</div>
