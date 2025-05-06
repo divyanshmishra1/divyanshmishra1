@@ -1,19 +1,37 @@
 <h1 align="center">Hi 👋, I'm Divyansh Mishra</h1>
-<h3 align="center">Aspiring VLSI Engineer | Electronics Enthusiast | Tech Innovator</h3>
+<h3 align="center">Aspiring VLSI Engineer | Electronics and Communication Student at IIIT Dharwad | Passionate about Chip Design & Embedded Systems</h3>
 
 ---
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=divyanshmishra1&theme=radical&hide_border=true" alt="GitHub Streak" />
-</p>
+🎓 I come from a humble background — my mother is a housewife and my father is a farmer.  
+🏅 I’ve consistently excelled academically:  
+- **Gold Medalist (City Rank 1)** – National Science Olympiad  
+- **Rank Holder** – Maxtop Olympiad  
+- **Head Boy** – School Leadership  
+- **Ideal Student of the Year** – Awardee  
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=radical&no-frame=true&title=MultiLanguage,Commit,Repositories,Followers,Stars" />
-</p>
+📚 I'm currently pursuing **Electronics and Communication Engineering** at **IIIT Dharwad**, backed by an educational loan.  
+💡 My **core interest lies in VLSI**, and I aim to pursue higher studies in this field to contribute to **India’s semiconductor mission** and help build it into a **chip-manufacturing hub**.
 
+🚀 I’m actively involved in projects like:
+- Smart water management systems
+- Miniature fire detection drones
+- FPGA-based speech-to-text systems
+- Embedded system and robotics projects
+
+🎯 I’ve been part of **VLSI hackathons**, workshops, and currently contribute as an **organizer** for college techfests focusing on hardware innovation.
+
+---
+
+### 📊 My GitHub Stats & Trophies
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&include_all_commits=true&count_private=true&hide_border=true" height="150" />
+  <img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=radical&no-frame=true&title=MultiLanguage,Commit,Repositories,Followers,Stars" height="150" />
+</p>
+
+<p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&langs_count=8&theme=radical&hide_border=true" height="150" />
+  <img src="https://github-readme-activity-graph.cyclic.app/graph?username=divyanshmishra1&theme=dracula&hide_border=true" alt="Activity Graph" />
 </p>
 
 ---
@@ -45,11 +63,4 @@
   <a href="#"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white" /></a>
   <a href="#"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" /></a>
-</p>
-
----
-
-### 🐍 GitHub Contribution Snake
-<p align="center">
-  <img src="https://raw.githubusercontent.com/divyanshmishra1/divyanshmishra1/output/github-contribution-grid-snake.svg" alt="Snake animation" />
 </p>
