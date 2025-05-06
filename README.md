@@ -1,54 +1,79 @@
 <h3 align="center">
-  Welcome to Code White's profile!
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
+  Welcome to Divyansh Mishra's GitHub Profile! 👋
 </h3>
+
 <p align="center">
-  <a href="https://github.com/CodeWhiteWeb/CodeWhiteWeb">
-    <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=Hi+%2C+welcome+to+my+Github+page;I+am+CodeWhiteWeb;Electronics+%26+Communication+Engineering+Student;Aspiring+VLSI+Engineer;Passionate+about+Semiconductors">
+  <a href="https://github.com/divyanshmishra1">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2500&pause=800&center=true&vCenter=true&multiline=true&width=650&height=100&lines=Hi%2C+I+am+Divyansh+Mishra;ECE+Undergrad+at+IIIT+Dharwad;Aspiring+VLSI+Engineer+%7C+FPGA+and+EDA+Explorer">
   </a>
 </p>
-<hr>
-<div align="center">
-<h1 id="about-me">💫 About Me :</h1>
-<p>🎓 I’m currently pursuing B.Tech in Electronics & Communication Engineering at IIIT Dharwad.</p>
-<p>🏆 NSO Gold Medalist | Maxtop Rank Holder | Ideal Student of the Year</p>
-<p>📚 Learning tools like LTspice, Vivado, ModelSim, Synopsys, and Cadence to master VLSI design.</p>
-<p>🛠️ Projects: Smart Water System | Speech-to-Text FPGA System | Fire Detection Drone (₹10k budget)</p>
-<p>🚀 My dream is to contribute to India’s growth as a chip manufacturing hub.</p>
-<p>⚡ Fun fact: I love mixing hardware with AI for real-world innovation.</p>
 
-<h2 id="socials">🌐 Socials</h2>
-<p>
-  <a href="https://medium.com/@CodeWhiteWeb"><img src="https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white" alt="Medium"></a>
-  <a href="https://reddit.com/user/CodeWhiteWeb"><img src="https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white" alt="Reddit"></a>
-  <a href="https://twitch.tv/code_white_web"><img src="https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white" alt="Twitch"></a>
-  <a href="https://youtube.com/c/CodeWhiteWeb"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white" alt="YouTube"></a>
+---
+
+### 💫 About Me
+
+- 🎓 Electronics & Communication Engineering @ IIIT Dharwad  
+- 🔬 Interests: VLSI, SoC Design, FPGA, Embedded Systems, IoT  
+- 🛠️ Projects:  
+  - 🚰 Smart Water Management System (IoT + Sensors)  
+  - 🔉 Speech-to-Text on FPGA (Keyword + Gender Detection)  
+  - 🚁 Mini Fire Detection Drone
+  - 🤖 Line Follower Robot
+- 💡 Learning Tools: LTspice, Vivado, ModelSim, Synopsys, Cadence, MATLAB  
+- 🇮🇳 Vision: Help build India’s chip manufacturing ecosystem  
+
+---
+
+### 🌐 Connect With Me
+
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/c/CodeWhiteWeb)  
+[![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/@CodeWhiteWeb)  
+[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/CodeWhiteWeb)  
+[![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://twitch.tv/code_white_web)
+
+---
+
+### ⚙️ Tech Stack
+
+![C](https://img.shields.io/badge/C-%2300599C.svg?style=flat&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/C++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white)
+![Verilog](https://img.shields.io/badge/Verilog-red?style=flat)
+![Python](https://img.shields.io/badge/Python-3670A0?style=flat&logo=python&logoColor=ffdd54)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat&logo=arduino&logoColor=white)
+![FPGA](https://img.shields.io/badge/FPGA-blue?style=flat)
+![Vivado](https://img.shields.io/badge/Vivado-yellow?style=flat)
+![ModelSim](https://img.shields.io/badge/ModelSim-007ACC?style=flat)
+![Synopsys](https://img.shields.io/badge/Synopsys-red?style=flat)
+![Cadence](https://img.shields.io/badge/Cadence-red?style=flat)
+
+---
+
+### 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&count_private=true" />
+  <br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=divyanshmishra1&theme=radical" />
+  <br/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical" />
 </p>
 
-<h1 id="tech-stack">💻 Tech Stack <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="32px"></h1>
-<p>
-  <img src="https://img.shields.io/badge/C-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C">
-  <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
-  <img src="https://img.shields.io/badge/Verilog-000000?style=for-the-badge&logo=verilog&logoColor=white" alt="Verilog">
-  <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino">
-  <img src="https://img.shields.io/badge/FPGA-blue?style=for-the-badge" alt="FPGA">
-  <img src="https://img.shields.io/badge/Cadence-red?style=for-the-badge" alt="Cadence">
-  <img src="https://img.shields.io/badge/ModelSim-007ACC?style=for-the-badge" alt="ModelSim">
-  <img src="https://img.shields.io/badge/Vivado-yellow?style=for-the-badge" alt="Vivado">
+---
+
+### 🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=discord&margin-w=8" />
 </p>
 
-<h1 id="github-stats">📊 GitHub Stats :</h1>
-<p><img src="https://github-readme-stats.vercel.app/api?username=CodeWhiteWeb&theme=radical&hide_border=false&include_all_commits=true&count_private=true" alt=""></p>
-<p><img src="https://github-readme-streak-stats.herokuapp.com/?user=CodeWhiteWeb&theme=radical&hide_border=false" alt=""></p>
-<p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=CodeWhiteWeb&theme=radical&hide_border=false&layout=compact" alt=""></p>
+---
 
-<h2 id="github-trophies">🏆 GitHub Trophies</h2>
-<p><img src="https://github-profile-trophy.vercel.app/?username=CodeWhiteWeb&theme=discord&no-frame=false&no-bg=false&margin-w=4" alt=""></p>
+### 📈 Visitors
 
-<!-- View count and final sign-off -->
-<p><img src="https://komarev.com/ghpvc/?username=CodeWhiteWeb&label=Visitors+Count&color=brightgreen" alt=""></p>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=divyanshmishra1&label=Profile+Views&color=brightgreen" />
+</p>
 
-<hr>
-<p><b>Keep Building. Keep Learning. The chip revolution begins here ⚡</b></p>
-</div>
+---
+
+> 🔧 *Keep building. Keep learning. The chip revolution begins with passion and persistence.* 🇮🇳
