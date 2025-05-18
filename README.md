@@ -49,11 +49,12 @@
 
 ### 📊 GitHub Stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&count_private=true" />
+<img src="https://github-readme-stats.vercel.app/api?username=divyanshmishra1&show_icons=true&theme=radical&count_private=true&cache_seconds=1800" />
 <br/>
-<img src="https://github-readme-streak-stats.herokuapp.com?user=divyanshmishra1&theme=radical" />
+<img src="https://github-readme-streak-stats.herokuapp.com?user=divyanshmishra1&theme=radical&count_private=true&cache_seconds=1800" />
 <br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical&count_private=true&cache_seconds=1800" />
+
 
 ---
 
@@ -65,7 +66,7 @@
 
 ### 📈 Visitors
 
-<img src="https://komarev.com/ghpvc/?username=divyanshmishra1&label=Profile+Views&color=brightgreen" />
+<img src="https://komarev.com/ghpvc/?username=divyanshmishra1&label=Profile+Views&color=ff69b4&style=flat-square" />
 
 ---
 
