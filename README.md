@@ -1,5 +1,5 @@
 <a href="https://github.com/divyanshmishra1">
-  <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=180&section=header&text=VLSI%20Design%20Engineer&fontSize=50&fontColor=fff&animation=fadeIn&fontAlignY=38"/>
+  <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=180&section=header&text=Aspiring%20VLSI%20Engineer&fontSize=50&fontColor=fff&animation=fadeIn&fontAlignY=38"/>
 </a>
 
 <div align="center">
