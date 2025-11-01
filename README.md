@@ -109,9 +109,10 @@ Passionate **VLSI Design Engineer** specializing in **Digital IC Design, RTL Dev
 </div>
 
 <div align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=2ECC71&text_color=C9D1D9&langs_count=8" />
-  <img width="49%" src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=divyanshmishra1&utcOffset=+5.5&theme=radical" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=divyanshmishra1&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=2ECC71&text_color=C9D1D9&langs_count=8&cache_seconds=1800" />
+  <img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=divyanshmishra1&utcOffset=+5.5&theme=radical" />
 </div>
+
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=divyanshmishra1&theme=radical&no-frame=true&no-bg=true&row=1&column=7" />
