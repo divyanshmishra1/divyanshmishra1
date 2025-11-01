@@ -147,7 +147,7 @@ Passionate **VLSI Design Engineer** specializing in **Digital IC Design, RTL Dev
 </p>
 
 <div align="center">
-  <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="100">
+ 
   
   ### "In VLSI, we make small things do extraordinary work"
 </div>
