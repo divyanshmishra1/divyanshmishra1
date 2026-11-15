@@ -32,6 +32,7 @@ QUERY = """
 query($login: String!) {
   user(login: $login) {
     name
+    createdAt
     followers { totalCount }
     pullRequests { totalCount }
     issues { totalCount }
@@ -46,6 +47,7 @@ query($login: String!) {
       }
     }
     contributionsCollection {
+      contributionYears
       totalCommitContributions
       restrictedContributionsCount
       contributionCalendar {
@@ -58,10 +60,21 @@ query($login: String!) {
 """
 
 
-def fetch():
+YEAR_QUERY = """
+query($login: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $login) {
+    contributionsCollection(from: $from, to: $to) {
+      contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
+    }
+  }
+}
+"""
+
+
+def gql(query, variables):
     req = urllib.request.Request(
         "https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {"login": USER}}).encode(),
+        data=json.dumps({"query": query, "variables": variables}).encode(),
         headers={"Authorization": f"bearer {os.environ['GITHUB_TOKEN']}",
                  "Content-Type": "application/json", "User-Agent": f"{USER}-profile-cards"},
     )
@@ -70,6 +83,26 @@ def fetch():
     if "errors" in data:
         sys.exit(f"GraphQL error: {data['errors']}")
     return data["data"]["user"]
+
+
+def fetch():
+    u = gql(QUERY, {"login": USER})
+    # Full history: one calendar per contribution year (the API allows at most a year per query)
+    all_days = {}
+    total_all = 0
+    now = dt.datetime.now(dt.timezone.utc)
+    for year in sorted(u["contributionsCollection"]["contributionYears"]):
+        start = f"{year}-01-01T00:00:00Z"
+        end = now.strftime("%Y-%m-%dT%H:%M:%SZ") if year == now.year else f"{year}-12-31T23:59:59Z"
+        cal = gql(YEAR_QUERY, {"login": USER, "from": start, "to": end})["contributionsCollection"]["contributionCalendar"]
+        total_all += cal["totalContributions"]
+        for w in cal["weeks"]:
+            for d in w["contributionDays"]:
+                if d["date"].startswith(str(year)):
+                    all_days[d["date"]] = d["contributionCount"]
+    u["allTime"] = {"total": total_all,
+                    "days": [{"date": k, "contributionCount": v} for k, v in sorted(all_days.items())]}
+    return u
 
 
 def demo():
@@ -81,7 +114,7 @@ def demo():
              "contributionCount": random.choice([0, 0, 0, 1, 2, 3, 6])} for i in range(371)]
     weeks = [{"contributionDays": days[i:i + 7]} for i in range(0, len(days), 7)]
     return {
-        "name": "Divyansh Mishra", "followers": {"totalCount": 40},
+        "name": "Divyansh Mishra", "createdAt": "2023-08-01T00:00:00Z", "followers": {"totalCount": 40},
         "pullRequests": {"totalCount": 5}, "issues": {"totalCount": 3},
         "repositoriesContributedTo": {"totalCount": 4},
         "repositories": {"totalCount": 7, "nodes": [{"stargazerCount": 2, "languages": {"edges": [
@@ -91,7 +124,8 @@ def demo():
             {"size": 12000, "node": {"name": "Python", "color": "#3572A5"}},
             {"size": 9000, "node": {"name": "Tcl", "color": "#e4cc98"}},
             {"size": 6000, "node": {"name": "TypeScript", "color": "#3178c6"}}]}}]},
-        "contributionsCollection": {"totalCommitContributions": 120, "restrictedContributionsCount": 0,
+        "allTime": {"total": sum(d["contributionCount"] for d in days), "days": days},
+        "contributionsCollection": {"contributionYears": [2025, 2026], "totalCommitContributions": 120, "restrictedContributionsCount": 0,
                                     "contributionCalendar": {"totalContributions": 260, "weeks": weeks}},
     }
 
@@ -165,23 +199,25 @@ def stats_card(u, days):
     body.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{TITLE}" stroke-width="6" stroke-linecap="round" '
                 f'stroke-dasharray="{circ*frac:.1f} {circ:.1f}" transform="rotate(-90 {cx} {cy})"/>')
     body.append(f'<text x="{cx}" y="{cy+2}" text-anchor="middle" fill="{TEXT}" font-size="22" font-weight="700">{fmt(total)}</text>')
-    body.append(f'<text x="{cx}" y="{cy+20}" text-anchor="middle" fill="{MUTED}" font-size="11">contributions</text>')
+    body.append(f'<text x="{cx}" y="{cy+20}" text-anchor="middle" fill="{MUTED}" font-size="11">last year</text>')
     body.append(f'<text x="{cx}" y="{cy+62}" text-anchor="middle" fill="{MUTED}" font-size="11">active {active} of 365 days</text>')
     name = (u.get("name") or USER).split()[0]
     return card(495, 195, f"{name}'s GitHub Stats", "".join(body),
                 f"{name}'s GitHub stats: {stars} stars, {total} contributions in the last year")
 
 
-def streak_card(days, total):
+def streak_card(u):
+    days = u["allTime"]["days"]
+    total = u["allTime"]["total"]
     cur, longest = streaks(days)
-    first = days[0]["date"]
+    first_active = next((d["date"] for d in days if d["contributionCount"]), days[0]["date"])
 
     def nice(s):
         return dt.date.fromisoformat(s).strftime("%b %-d, %Y")
 
-    cols = [(82, fmt(total), "Total Contributions", f"{nice(first)} – Present"),
+    cols = [(82, fmt(total), "Total Contributions", f"{nice(first_active)} – Present"),
             (247, str(cur), "Current Streak", "days in a row"),
-            (412, str(longest), "Longest Streak", "in the last year")]
+            (412, str(longest), "Longest Streak", "all time")]
     body = [f'<line x1="165" y1="28" x2="165" y2="170" stroke="{BORDER}"/>',
             f'<line x1="330" y1="28" x2="330" y2="170" stroke="{BORDER}"/>']
     for x, val, label, sub in cols:
@@ -195,7 +231,7 @@ def streak_card(days, total):
             body.append(f'<text x="{x}" y="112" text-anchor="middle" fill="{TEXT}" font-size="14">{label}</text>')
             body.append(f'<text x="{x}" y="138" text-anchor="middle" fill="{MUTED}" font-size="12">{sub}</text>')
     return card(495, 195, "", "".join(body),
-                f"{total} contributions in the last year, current streak {cur} days, longest streak {longest} days")
+                f"{total} total contributions, current streak {cur} days, longest streak {longest} days")
 
 
 def languages_card(u):
@@ -257,7 +293,7 @@ def main():
     days = [d for w in u["contributionsCollection"]["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
     days.sort(key=lambda d: d["date"])
     os.makedirs(OUT, exist_ok=True)
-    for name, svg in [("stats", stats_card(u, days)), ("streak", streak_card(days, u["contributionsCollection"]["contributionCalendar"]["totalContributions"])),
+    for name, svg in [("stats", stats_card(u, days)), ("streak", streak_card(u)),
                       ("languages", languages_card(u)), ("activity", activity_card(days))]:
         with open(os.path.join(OUT, f"{name}.svg"), "w") as f:
             f.write(svg)
