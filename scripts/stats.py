@@ -15,6 +15,8 @@ import sys
 import urllib.request
 
 USER = os.environ.get("PROFILE_USER", "divyanshmishra1")
+# Markup/build files that aren't really "languages" for this profile
+HIDE_LANGS = {"Linker Script", "Makefile", "HTML", "CSS", "SCSS", "Dockerfile", "Batchfile", "CMake", "Procfile"}
 OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "generated", "stats.svg")
 
 QUERY = """
@@ -124,6 +126,8 @@ def render(u):
     for r in u["repositories"]["nodes"]:
         for e in r["languages"]["edges"]:
             n = e["node"]["name"]
+            if n in HIDE_LANGS:
+                continue
             langs[n] = langs.get(n, 0) + e["size"]
             colors[n] = e["node"]["color"] or "#8B949E"
     total = sum(langs.values()) or 1
@@ -183,7 +187,8 @@ def render(u):
         pct = 100 * size / total
         out.append(f'<circle cx="{x+5}" cy="{by+30}" r="5" fill="{colors[name]}"/>'
                    f'<text x="{x+15}" y="{by+34}" font-family="{SANS}" font-size="12" fill="#C9D1D9">{name} <tspan fill="#5B6676">{pct:.0f}%</tspan></text>')
-        x += 16 + len(name) * 7 + 44
+        label_w = sum(6.2 if c.islower() else 7.6 for c in name) + 8 + 7.2 * len(f"{pct:.0f}%")
+        x += 15 + label_w + 22
 
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%d %b %Y")
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="GitHub stats for {USER}: {cal["totalContributions"]} contributions in the last year, current streak {cur} days, longest {longest} days, {u["pullRequests"]["totalCount"]} pull requests, {u["repositories"]["totalCount"]} public repositories, {stars} stars">
