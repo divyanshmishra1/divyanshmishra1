@@ -21,6 +21,11 @@ import sys
 import urllib.request
 
 USER = os.environ.get("PROFILE_USER", "divyanshmishra1")
+# STATS_TOKEN = the profile owner's own token (classic: read:user + repo). With it, private
+# contributions and private-repo languages are included as AGGREGATES only: no repository
+# names, descriptions or paths are ever written to the cards or printed to the (public) logs.
+TOKEN = os.environ.get("STATS_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
+INCLUDE_PRIVATE = bool(os.environ.get("STATS_TOKEN"))
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "cards")
 HIDE_LANGS = {"Linker Script", "Makefile", "HTML", "CSS", "SCSS", "Dockerfile", "Batchfile", "CMake", "Procfile"}
 
@@ -37,15 +42,6 @@ query($login: String!) {
     pullRequests { totalCount }
     issues { totalCount }
     repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, ISSUE, REPOSITORY]) { totalCount }
-    repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100) {
-      totalCount
-      nodes {
-        stargazerCount
-        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
-          edges { size node { name color } }
-        }
-      }
-    }
     contributionsCollection {
       contributionYears
       totalCommitContributions
@@ -59,6 +55,22 @@ query($login: String!) {
 }
 """
 
+
+REPO_QUERY = """
+query($login: String!, $cursor: String, $privacy: RepositoryPrivacy) {
+  user(login: $login) {
+    repositories(ownerAffiliations: OWNER, isFork: false, privacy: $privacy, first: 100, after: $cursor) {
+      pageInfo { hasNextPage endCursor }
+      nodes {
+        stargazerCount
+        languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+          edges { size node { name color } }
+        }
+      }
+    }
+  }
+}
+"""
 
 YEAR_QUERY = """
 query($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -75,18 +87,31 @@ def gql(query, variables):
     req = urllib.request.Request(
         "https://api.github.com/graphql",
         data=json.dumps({"query": query, "variables": variables}).encode(),
-        headers={"Authorization": f"bearer {os.environ['GITHUB_TOKEN']}",
+        headers={"Authorization": f"bearer {TOKEN}",
                  "Content-Type": "application/json", "User-Agent": f"{USER}-profile-cards"},
     )
     with urllib.request.urlopen(req, timeout=30) as r:
         data = json.load(r)
     if "errors" in data:
-        sys.exit(f"GraphQL error: {data['errors']}")
+        # Only the error type goes to the public log, never the message (it could name a private repo)
+        sys.exit("GraphQL error: " + ", ".join(sorted({e.get("type", "unknown") for e in data["errors"]})))
     return data["data"]["user"]
+
+
+def fetch_repos():
+    nodes, cursor = [], None
+    privacy = None if INCLUDE_PRIVATE else "PUBLIC"
+    while True:
+        page = gql(REPO_QUERY, {"login": USER, "cursor": cursor, "privacy": privacy})["repositories"]
+        nodes += page["nodes"]
+        if not page["pageInfo"]["hasNextPage"]:
+            return nodes
+        cursor = page["pageInfo"]["endCursor"]
 
 
 def fetch():
     u = gql(QUERY, {"login": USER})
+    u["repositories"] = {"nodes": fetch_repos()}
     # Full history: one calendar per contribution year (the API allows at most a year per query)
     all_days = {}
     total_all = 0
@@ -258,7 +283,9 @@ def languages_card(u):
         body.append(f'<circle cx="{lx+5}" cy="{ly-4}" r="5" fill="{colors[n]}"/>')
         body.append(f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" font-size="12.5">{n} <tspan fill="{MUTED}">{100*s/total:.1f}%</tspan></text>')
     if not top:
-        body.append(f'<text x="25" y="100" fill="{MUTED}" font-size="13">No public language data yet</text>')
+        body.append(f'<text x="25" y="100" fill="{MUTED}" font-size="13">No language data yet</text>')
+    if INCLUDE_PRIVATE:
+        body.append(f'<text x="470" y="182" text-anchor="end" fill="{MUTED}" font-size="10">public + private repositories</text>')
     return card(495, 195, "Most Used Languages", "".join(body), "Most used languages: " +
                 ", ".join(f"{n} {100*s/total:.0f}%" for n, s in top))
 
