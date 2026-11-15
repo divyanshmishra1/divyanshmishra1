@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Generate cards
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
           PROFILE_USER: ${{ github.repository_owner }}
         run: python3 scripts/cards.py
       - name: Commit if changed
